@@ -1,0 +1,1 @@
+import{_ as e,o as c,c as n}from"./app-ff2f634e.js";const t={};function a(i,o){return c(),n("div")}const r=e(t,[["render",a],["__file","webpackpeizhiwenjiancaiyongts.html.vue"]]);export{r as default};

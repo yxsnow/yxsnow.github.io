@@ -1,0 +1,1 @@
+import{_ as l,o as n,c as o,b as e,d as t}from"./app-ff2f634e.js";const s={},c=e("ol",null,[e("li",null,[t("地址 "),e("ol",null,[e("li",null,"/Users/hua/Library/pnpm/global/5")])])],-1),_=[c];function a(r,i){return n(),o("div",null,_)}const u=l(s,[["render",a],["__file","pnpm link.html.vue"]]);export{u as default};

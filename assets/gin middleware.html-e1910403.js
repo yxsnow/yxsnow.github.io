@@ -1,0 +1,5 @@
+import{_ as n,o as s,c as a,a as e}from"./app-ff2f634e.js";const t={},c=e(`<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">MyMiddleware</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">//请求前逻辑     </span>
+    c<span class="token punctuation">.</span><span class="token function">Next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">//请求后逻辑 }</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1),o=[c];function i(l,p){return s(),a("div",null,o)}const u=n(t,[["render",i],["__file","gin middleware.html.vue"]]);export{u as default};

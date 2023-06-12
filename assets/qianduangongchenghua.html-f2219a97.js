@@ -1,0 +1,1 @@
+import{_ as e,o as c,c as n,b as a}from"./app-ff2f634e.js";const t="/assets/fd2cc183da3d1fbaa38345fdb6f1b82f-e9a44c3d.png",s={},o=a("p",null,[a("img",{src:t,alt:"fd2cc183da3d1fbaa38345fdb6f1b82f.png"})],-1),d=[o];function _(f,r){return c(),n("div",null,d)}const i=e(s,[["render",_],["__file","qianduangongchenghua.html.vue"]]);export{i as default};

@@ -1,0 +1,1 @@
+import{_ as t,o as c,c as n,b as e}from"./app-ff2f634e.js";const s="/assets/facd2bfd5fdd5b5c262f26de91a5d262-0c13bd14.png",d={},o=e("p",null,[e("img",{src:s,alt:"facd2bfd5fdd5b5c262f26de91a5d262.png"})],-1),a=[o];function _(f,l){return c(),n("div",null,a)}const i=t(d,[["render",_],["__file","xitongfuwuguanli.html.vue"]]);export{i as default};

@@ -1,0 +1,2 @@
+import{_ as n,o as s,c as t,b as e}from"./app-ff2f634e.js";const a={},c=e("div",{class:"language-text line-numbers-mode","data-ext":"text"},[e("pre",{class:"language-text"},[e("code",null,`npx husky add .husky/commit-msg 'cat $1 | npx --no-install commitlint --edit'
+`)]),e("div",{class:"line-numbers","aria-hidden":"true"},[e("div",{class:"line-number"})])],-1),o=[c];function l(i,d){return s(),t("div",null,o)}const h=n(a,[["render",l],["__file","huskyshengchenghook.html.vue"]]);export{h as default};

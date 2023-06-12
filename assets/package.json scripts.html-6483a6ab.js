@@ -1,0 +1,21 @@
+import{_ as e,o as t,c as o,a as s}from"./app-ff2f634e.js";const i={},d=s(`<p>npm 脚本有<code>pre</code>和<code>post</code>两个钩子。举例来说，<code>build</code>脚本命令的钩子就是<code>prebuild</code>和<code>postbuild</code>。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>\`&quot;prebuild&quot;: &quot;echo I run before the build script&quot;,
+&quot;build&quot;: &quot;cross-env NODE_ENV=production webpack&quot;,
+&quot;postbuild&quot;: &quot;echo I run after the build script&quot;\`
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>用户执行<code>npm run build</code>的时候，会自动按照下面的顺序执行。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>\`npm run prebuild &amp;&amp; npm run build &amp;&amp; npm run postbuild\`
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>因此，可以在这两个钩子里面，完成一些准备工作和清理工作。下面是一个例子。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>\`&quot;clean&quot;: &quot;rimraf ./dist &amp;&amp; mkdir dist&quot;,
+&quot;prebuild&quot;: &quot;npm run clean&quot;,
+&quot;build&quot;: &quot;cross-env NODE_ENV=production webpack&quot;\`
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>npm 默认提供下面这些钩子。</p><ul><li>prepublish，postpublish</li><li>preinstall，postinstall</li><li>preuninstall，postuninstall</li><li>preversion，postversion</li><li>pretest，posttest</li><li>prestop，poststop</li><li>prestart，poststart</li><li>prerestart，postrestart</li></ul><p>自定义的脚本命令也可以加上<code>pre</code>和<code>post</code>钩子。比如，<code>myscript</code>这个脚本命令，也有<code>premyscript</code>和<code>postmyscript</code>钩子。不过，双重的<code>pre</code>和<code>post</code>无效，比如<code>prepretest</code>和<code>postposttest</code>是无效的。</p><p>npm 提供一个<code>npm_lifecycle_event</code>变量，返回当前正在运行的脚本名称，比如<code>pretest</code>、<code>test</code>、<code>posttest</code>等等。所以，可以利用这个变量，在同一个脚本文件里面，为不同的<code>npm scripts</code>命令编写代码。请看下面的例子。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>\`\`const TARGET = p<wbr>rocess.env.npm_lifecycle_event;
+
+if (TARGET === &#39;test&#39;) {
+  console.log(\`Running the test task!\`);
+}
+
+if (TARGET === &#39;pretest&#39;) {
+  console.log(\`Running the pretest task!\`);
+}
+
+if (TARGET === &#39;posttest&#39;) {
+  console.log(\`Running the posttest task!\`);
+}\`\`
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意，<code>prepublish</code>这个钩子不仅会在<code>npm publish</code>命令之前运行，还会在<code>npm install</code>（不带任何参数）命令之前运行。这种行为很容易让用户感到困惑，所以 npm 4 引入了一个新的钩子<code>prepare</code>，行为等同于<code>prepublish</code>，而从 npm 5 开始，<code>prepublish</code>将只在<code>npm publish</code>命令之前运行。</p><h2 id="八、简写形式" tabindex="-1"><a class="header-anchor" href="#八、简写形式" aria-hidden="true">#</a> <a href="#"></a><a href="#"></a>八、简写形式</h2><p>四个常用的 npm 脚本有简写形式。</p><blockquote><ul><li><code>npm start</code>是<code>npm run start</code></li></ul></blockquote><ul><li><code>npm stop</code>是<code>npm run stop</code>的简写</li><li><code>npm test</code>是<code>npm run test</code>的简写</li><li><code>npm restart</code>是<code>npm run stop &amp;&amp; npm run restart &amp;&amp; npm run start</code>的简写</li></ul><p><code>npm start</code>、<code>npm stop</code>和<code>npm restart</code>都比较好理解，而<code>npm restart</code>是一个复合命令，实际上会执行三个脚本命令：<code>stop</code>、<code>restart</code>、<code>start</code>。具体的执行顺序如下。</p><ol><li>prerestart</li><li>prestop</li><li>stop</li><li>poststop</li><li>restart</li><li>prestart</li><li>start</li><li>poststart</li><li>postrestart</li></ol>`,18),n=[d];function c(l,r){return t(),o("div",null,n)}const a=e(i,[["render",c],["__file","package.json scripts.html.vue"]]);export{a as default};
